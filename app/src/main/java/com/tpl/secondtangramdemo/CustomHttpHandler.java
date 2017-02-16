@@ -22,11 +22,9 @@ public class CustomHttpHandler extends HttpHandler {
 
 
         if(url.contains("https://tile.mapzen.com/")){
-            Log.e("New Request:::", "New Request- "+url);
             int zoomLevel =getZoomLevel(url);
 
-            Log.e("Zoom", "zoom   :"+zoomLevel);
-            if(zoomLevel>=13 && zoomLevel<=18 ){
+             if(zoomLevel>=13 && zoomLevel<=18 ){
                 return super.onRequest(url, cb);
             }else{
                 return false;
