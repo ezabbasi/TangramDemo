@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aa222222"
+    tools:context="com.tpl.secondtangramdemo.MainActivity">
+
+    <com.mapzen.tangram.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.mapzen.tangram.MapView>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:elevation="4dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white">
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/radio_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit point"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_lines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit line segment"
+                android:clickable="false"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_polygons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit polygon"
+                android:clickable="false"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Switch
+                android:id="@+id/show_3d_buildings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:checked="true"
+                android:text="Show Buildings"/>
+
+            <Switch
+                android:id="@+id/change_scene"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:checked="false"
+                android:text="Change Scene"/>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/reset_marker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:text="Clear Marker"/>
+
+            <Button
+                android:id="@+id/change_scene_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:text="Change Scene File"/>
+
+            <TextView
+                android:id="@+id/zoom_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:layout_marginLeft="16dp"
+                tools:text="z: 16."/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
